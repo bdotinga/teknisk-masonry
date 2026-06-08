@@ -2094,19 +2094,11 @@ function toggleService(id){
 
 // ── INSTAGRAM FEED ──
 (function(){
-  var PAGE_ID = '112092959112357';
-  var TOKEN   = 'EAAMRG4DPBQ0BRuBlgCmQ7qhO2gQrawGWGX2BLiTdSXGS3I7foIHygqBKztndvMpZCAZBiXK6tAut178xC7omNfPv9Fbyd7LUg4GZAKZCqfRAJ3qvMjbp64rEBiIZCFqm04XGKyHtQNrQZAncRUZAZBZCkUkEkuFXo8iN3yP6c2sUOpgvGHxgvhqenRJuS5bPdjmqVBdR0qzuJC1ZCsbKbE20A8RL3nyNB9tjBoqF4FYjykvjieATeXb1HSMPAZB89Pa6ZAVWnB7w5h0z1sT27KZAD';
-  var grid    = document.getElementById('instagramGrid');
+  var IG_ID = '17841454354789993';
+  var TOKEN = 'EAAMRG4DPBQ0BRuBlgCmQ7qhO2gQrawGWGX2BLiTdSXGS3I7foIHygqBKztndvMpZCAZBiXK6tAut178xC7omNfPv9Fbyd7LUg4GZAKZCqfRAJ3qvMjbp64rEBiIZCFqm04XGKyHtQNrQZAncRUZAZBZCkUkEkuFXo8iN3yP6c2sUOpgvGHxgvhqenRJuS5bPdjmqVBdR0qzuJC1ZCsbKbE20A8RL3nyNB9tjBoqF4FYjykvjieATeXb1HSMPAZB89Pa6ZAVWnB7w5h0z1sT27KZAD';
+  var grid  = document.getElementById('instagramGrid');
 
-  // Step 1: get the Instagram Business Account ID from the page
-  fetch('https://graph.facebook.com/v19.0/' + PAGE_ID + '?fields=instagram_business_account&access_token=' + TOKEN)
-    .then(function(r){ return r.json(); })
-    .then(function(data){
-      if(!data.instagram_business_account) throw new Error('No IG account linked');
-      var igId = data.instagram_business_account.id;
-      // Step 2: get the 6 most recent media posts
-      return fetch('https://graph.facebook.com/v19.0/' + igId + '/media?fields=id,media_type,media_url,thumbnail_url,permalink&limit=6&access_token=' + TOKEN);
-    })
+  fetch('https://graph.facebook.com/v19.0/' + IG_ID + '/media?fields=id,media_type,media_url,thumbnail_url,permalink&limit=6&access_token=' + TOKEN)
     .then(function(r){ return r.json(); })
     .then(function(data){
       if(!data.data || !data.data.length) throw new Error('No posts');
@@ -2130,7 +2122,6 @@ function toggleService(id){
     })
     .catch(function(err){
       console.warn('Instagram feed failed to load:', err);
-      // placeholders stay in place on error
     });
 })();
 

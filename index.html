@@ -2095,10 +2095,10 @@ function toggleService(id){
 // ── INSTAGRAM FEED ──
 (function(){
   var IG_ID = '17841454354789993';
-  var TOKEN = 'EAAMRG4DPBQ0BRuBlgCmQ7qhO2gQrawGWGX2BLiTdSXGS3I7foIHygqBKztndvMpZCAZBiXK6tAut178xC7omNfPv9Fbyd7LUg4GZAKZCqfRAJ3qvMjbp64rEBiIZCFqm04XGKyHtQNrQZAncRUZAZBZCkUkEkuFXo8iN3yP6c2sUOpgvGHxgvhqenRJuS5bPdjmqVBdR0qzuJC1ZCsbKbE20A8RL3nyNB9tjBoqF4FYjykvjieATeXb1HSMPAZB89Pa6ZAVWnB7w5h0z1sT27KZAD';
+  var TOKEN = 'EAAMRG4DPBQ0BRtrqHJyRKr2CvnRpfDWZC2BwY9MlOdeiX2vUe8d6xMZAtd5uTNsAUBc7KqzQhR4KwE6YMd5eCdAX8qNFEjZBwdyHs6PWSVV3PAGNIHhemBZCYlmnZAOMoOUb8vraq0jROoHmnZCBWaK9urtfLZA8vMVRxZCuAb2gzB8a3JFFw6f87ExJE05KaaJvR';
   var grid  = document.getElementById('instagramGrid');
 
-  fetch('https://graph.facebook.com/v19.0/' + IG_ID + '/media?fields=id,media_type,media_url,thumbnail_url,permalink&limit=6&access_token=' + TOKEN)
+  fetch('https://graph.facebook.com/v25.0/' + IG_ID + '/media?fields=id,media_type,media_url,thumbnail_url,permalink&limit=6&access_token=' + TOKEN)
     .then(function(r){ return r.json(); })
     .then(function(data){
       if(!data.data || !data.data.length) throw new Error('No posts');

@@ -2095,7 +2095,7 @@ function toggleService(id){
 // ── INSTAGRAM FEED ──
 (function(){
   var IG_ID = '17841454354789993';
-  var TOKEN = 'EAAMRG4DPBQ0BRtrqHJyRKr2CvnRpfDWZC2BwY9MlOdeiX2vUe8d6xMZAtd5uTNsAUBc7KqzQhR4KwE6YMd5eCdAX8qNFEjZBwdyHs6PWSVV3PAGNIHhemBZCYlmnZAOMoOUb8vraq0jROoHmnZCBWaK9urtfLZA8vMVRxZCuAb2gzB8a3JFFw6f87ExJE05KaaJvR';
+  var TOKEN = 'EAAMRG4DPBQ0BRmiGrwULJU2jXkKIIFmPRdvkbObzRHa3tDit00giE94iecnlxyixboxsxJyMRalBDUTwFdKSUEtCD72mLXjLnLoDlmEy2inbhH16IMq4CKAZB6xFOZCtXq3PqhboZC8lrWFwoRoO6AbybyMH1vxtAT5lmE6ZCzfyrf6YTgWY8JpQ67trHSON';
   var grid  = document.getElementById('instagramGrid');
 
   fetch('https://graph.facebook.com/v25.0/' + IG_ID + '/media?fields=id,media_type,media_url,thumbnail_url,permalink&limit=6&access_token=' + TOKEN)

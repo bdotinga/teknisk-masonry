@@ -2104,7 +2104,7 @@ function toggleService(id){
       if(!data.data || !data.data.length) throw new Error('No posts');
       grid.innerHTML = '';
       data.data.forEach(function(post){
-        var imgUrl = post.media_type === 'VIDEO' ? post.thumbnail_url : post.media_url;
+        var imgUrl = post.thumbnail_url || post.media_url;
         if(!imgUrl) return;
         var tile = document.createElement('a');
         tile.href = post.permalink;
